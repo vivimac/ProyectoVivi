@@ -14,15 +14,16 @@ function verificar() {
     msj.innerHTML = "Dato requerido";
     msj.style.color = "red";
     msj.style.display = "block";
+
   } else {
     location.href = "principal.html";
 
     usuario.nombre = dato.value;
     usuario.estado = "conectado";
+    sessionStorage.setItem('usuario',JSON.stringify(usuario));
 
-    
-  }
-}
+  }}
+
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
 
@@ -32,7 +33,7 @@ function onSignIn(googleUser) {
   console.log('Family Name: ' + profile.getFamilyName());
   console.log("Image URL: " + profile.getImageUrl());
   console.log("Email: " + profile.getEmail());*/
-
+  
   // The ID token you need to pass to your backend:
   var id_token = googleUser.getAuthResponse().id_token;
   console.log("ID Token: " + id_token);
