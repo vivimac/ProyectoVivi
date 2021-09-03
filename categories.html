@@ -22,6 +22,17 @@
         <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+
+        <div
+          class="fondo d-flex flex-column flex-md-row justify-content-between"
+        >
+          <i class="far fa-user"></i>&nbsp&nbsp&nbsp
+            <b><p id="nombre"></p></b>
+        </div>
+
+        <button class="desconect" id="desconectar" onclick="desconectar()">
+          <b>Desconectar</b> <i class="fas fa-sign-out-alt"></i>
+        </button>
       </div>
     </nav>
     <main role="main" class="pb-5">
@@ -87,5 +98,6 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/categories.js"></script>
+    <script src="js/login.js"></script>
   </body>
 </html>
