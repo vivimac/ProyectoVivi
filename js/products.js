@@ -1,7 +1,6 @@
 let productsArray = [];
 
 function showProductsList(array) {
-  
   let htmlContentToAppend = "";
   for (let i = 0; i < array.length; i++) {
     let product = array[i];
@@ -13,39 +12,34 @@ function showProductsList(array) {
                 <div class="col-3">
                     <img src="` +
       product.imgSrc +
-      `" alt="` +
-      product.desc +
       `" class="img-thumbnail">
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
                     <h4 class="mb-1"><b>` +
       product.name +
-      `</h4></b></div>
-                    <div><p class="mb-1">` +
+      ` </h4></b> 
+                     </div>
+                   <p class="d-flex w-100 justify-content-between">` +
       product.description +
-      `<p> </div>
-                       <div> <small class="text-muted"><b>` +
+      `<p> 
+                </div>
+                    <class="text-muted mb-1"><b> ` +
       product.currency +
+      `  ` +
       product.cost +
-      `</small></b></div>
-      <div><br><small class="text">` +
+      `</b></>
+            </div>
+                    <small class="text-muted">` +
       product.soldCount +
       ` artículos vendidos </small>
-                       </div>
-                    
-                </div>
-            </div>
         </div> 
         `;
 
-    document.getElementById("cat-list-container").innerHTML =
-      htmlContentToAppend;
-  }
+    document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
+    }
 }
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
+
 document.addEventListener("DOMContentLoaded", function (e) {
   getJSONData(PRODUCTS_URL).then(function (resultObj) {
     if (resultObj.status === "ok") {
@@ -54,3 +48,62 @@ document.addEventListener("DOMContentLoaded", function (e) {
     }
   });
 });
+
+ 
+document.getElementById("filtro").addEventListener("click", function() { 
+  maxPrice= document.getElementById("maximo").value;
+  minPrice = document.getElementById("minimo").value;
+  })
+
+document.getElementById("ascendente").addEventListener("click",() => { 
+  ordenarAscendente(); })
+
+document.getElementById("descendente").addEventListener("click",() => {
+  ordenarDescendente(); })
+
+  document.getElementById("rele").addEventListener("click",() => {
+    ordenarRelevancia(); })
+
+function ordenarPrecio(){
+  productsArray.sort((a,b)=> {
+    if (a.cost > b.cost){
+      return 1; }
+if(a.cost < b.cost){
+  return -1;}
+else{return 0}
+});
+showProductsList(productsArray)
+}
+
+function ordenarAscendente(){
+let ordenado=[]
+ordenarPrecio(productsArray);
+showProductsList(ordenado);
+
+}
+
+function ordenarDescendente(){
+  let ordenado=[]
+  ordenarPrecio(productsArray);
+  ordenado = productsArray.reverse()
+  showProductsList(ordenado);
+  
+  }
+
+  
+function ordenarRelevancia(){
+    productsArray.sort((a,b)=> {
+      if (a.soldCount > b.soldCount){
+        return -1; }
+  if(a.soldCount < b.soldCount){
+    return 1;}
+  else{return 0}
+  });
+  showProductsList(productsArray)
+  }
+
+function Relevancia(){
+    let ordenado=[]
+    ordenarRelevancia(productsArray);
+    showProductsList(ordenado); 
+  }
