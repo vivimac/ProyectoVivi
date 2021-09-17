@@ -84,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
 });
 
 
-
   //   Filtrar
 document.getElementById("filtrar").addEventListener("click", function() { 
 max = document.getElementById("maximo").value;

@@ -36,14 +36,79 @@
         </button>
     </div>
   </nav>
+
+  
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+    
+    <b><h2 id="productName"></b></h2>
+    <hr class="my-3">
+  
+    <dl>
+      <dt><i class="fas fa-file-signature"></i> Descripción</dt>
+      <dd>
+        <p id="productDescription"></p>
+      </dd>
+  
+      <dt><i class="fas fa-dollar-sign"></i> Costo del producto</dt>
+      <dd>
+          <p id="productCost" ></p>
+        
+      </dd>
+  
+      <dt><i class="fas fa-cart-arrow-down"></i> Cantidad de vendidos</dt>
+      <dd>
+        <p id="productSoldCount"></p>
+      </dd>
+  
+      <dt><i class="fas fa-camera"></i> Imágenes ilustrativas</dt><br>
+         <dd> <div class="row text-center text-lg-left pt-2" id="productImages">
+</div>
+      </dd>
+
+    
+    <!--<dt> Productos relacionados</dt>
+  <dd>        <p id="productRela"></p>-->
+  </dd>
+
+</dl>
+<br><br>
+<br><br>
+
+<div class="text-center justify-content-between">
+
+    <h4><b> Comentarios de usuarios  <i class="fas fa-comments"></i></b></h4> 
+
+    <div id="comentarios" class="text-lg-left justify-content-between" ;>
   </div>
+
+  <div>
+    <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_anwqesu5.json" mode="bounce" background="transparent"  speed="1"  style="width: 200px; height: 200px; padding-top: 20mm; padding-left: 40mm;"   loop  autoplay></lottie-player>
+    
+    <h2>Contanos tu experiencia </h2>
+    
+    <label>Puntuación<input id="puntuacion" class="form-control" type ="number" min="1" max="5"></label>
+    <label>Fecha<input id="fecha" class="form-control" type ="date"></label>
+    <br>       
+<textarea id="newComment" class="textarea" placeholder="Ingrese su comentario aquí"></textarea>
+ 
+  <br>
+   <button class="desconect" id="agregar" ><b>Agregar</b></button>
+   <button class="btn-danger" id="borrar" style="border-radius: 6px;"><b><i class="fas fa-undo-alt"></i></b></button>
+</div>
+
+  </div> 
+  
+  </div>
+
+<br><br>
+
+  <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Volver a la lista de productos</a>
+</div>
+</main>
+
+
+
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
@@ -65,6 +130,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </body>
 
 </html>

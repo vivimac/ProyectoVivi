@@ -18,7 +18,7 @@ function verificar() {
   } else {
 
     usuario.nombre = dato.value;
-    usuario.estado = "conectado";
+    //usuario.estado = "conectado";
     localStorage.setItem('usuario',JSON.stringify(usuario));
     sessionStorage.setItem('usuario',JSON.stringify(usuario));
     

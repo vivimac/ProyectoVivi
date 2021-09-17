@@ -61,6 +61,7 @@
         <div class="row">
           <div class="col text-right">
             <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+             
               <label class="btn btn-light active" id="descendente">
                 <input
                   type="radio"
@@ -69,29 +70,35 @@
                   checked
                 /><i class="fas fa-sort-amount-down mr-1"></i> Mayor precio
               </label>
+
               <label class="btn btn-light" id="ascendente">
                 <input type="radio" name="options" autocomplete="off" /><i
                   class="fas fa-sort-amount-down-alt"
                 ></i>
                 Menor precio
               </label>
+
               <label class="btn btn-light" id="rele">
                 <input type="radio" name="options" autocomplete="off" /><i
                   class="fas fa-sort-amount-down mr-1"
                 ></i
                 >Relevancia
               </label>
+
             </div>
             <div class="col">
+
               <i class="fas fa-search"></i>&nbsp; <input type="search"
               id="buscador" style="margin-right: 5mm;">
               <i class="fas fa-dollar-sign"></i>&nbsp;
+              
               <input
                 type="number"
                 placeholder="Precio minimo"
                 id="minimo"
                 class="caja"
               />
+
               <input
                 type="number"
                 placeholder="Precio máximo"
@@ -99,17 +106,20 @@
                 class="caja"
                 style="margin-right: 5mm"
               />
+
               <div class="btn-group" role="group">
                 <button class="btn btn-light btn-block" id="filtrar">
                   Filtrar&nbsp;<i class="fas fa-filter"></i>
                 </button>
+
                 <button class="btn btn-link btn-sm" id="borrar" >
                   Limpiar
                 </button>
+
               </div>
             </div>
 
-            <div class="list-group" id="cat-list-container"></div>
+            <a href="product-info.html" div class="list-group" id="cat-list-container"></a></div>
           </div>
         </div>
       </div>
@@ -135,10 +145,12 @@
         <div></div>
       </div>
     </div>
+
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/products.js"></script>
     <script src="js/login.js"></script>
+    
   </body>
 </html>
