@@ -11,7 +11,8 @@ function showProductsList(array) {
 
     htmlContentToAppend +=
       `
-        <div class="list-group-item list-group-item-action">
+      <a href="product-info.html">
+     <div class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
                     <img src="` +
@@ -37,7 +38,7 @@ function showProductsList(array) {
                     <small class="text-muted">` +
       product.soldCount +
       ` artículos vendidos </small>
-        </div> 
+        </div> </a>
 `;  }
 
 

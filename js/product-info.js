@@ -1,41 +1,4 @@
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
-
-document.addEventListener("DOMContentLoaded", function (e) {
-
-  // Obtengo los datos json de la info
-  getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
-    if (resultObj.status === "ok") {
-      productInfo = resultObj.data;
-
-      let productNameHTML = document.getElementById("productName");
-      let productDescriptionHTML =
-        document.getElementById("productDescription");
-      let productCostHTML = document.getElementById("productCost");
-      let productSoldCountHTML = document.getElementById("productSoldCount");
-      //let productRelaHTML = document.getElementById("productRela");
-
-      productNameHTML.innerHTML = productInfo.name;
-      productDescriptionHTML.innerHTML = productInfo.description;
-      productCostHTML.innerHTML =  productInfo.currency + productInfo.cost ;
-      productSoldCountHTML.innerHTML = productInfo.soldCount;
-      //productRelaHTML.innerHTML = productInfo.relatedProducts;
-
-      showProductsInfo(productInfo.images);
-    }
-  });
-
-  // Obtengo los datos json de los comentarios
-  getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
-    if (resultObj.status === "ok") {
-      commentsArray = resultObj.data;
-      showProductsComments(commentsArray);
-    }
-  });
-});
-
-
+let htmlContentToAppend = []
 
 // Muestra la info
 function showProductsInfo(array) {
@@ -137,4 +100,82 @@ document.getElementById("borrar").addEventListener("click", function () {
   showProductsComments(commentsArray);
 });
 
+// FUNCION PARA MOSTRAR PRODUCTOS RELACIONADOS
+function showRelatedProducts(related) {
+  let htmlContentToAppend = "";
+  
+   productInfo.relatedProducts.forEach((relaProduct)=>{
 
+    htmlContentToAppend +=
+      `<div class="col-lg-3 col-md-5 col-6 ">
+      <a href="products.html" class=" shadow-sm custom-card">
+      <img class="bd-placeholder-img card-img-top" src="`+ related[relaProduct].imgSrc+ `">
+      <h3 class="text-center"><b>`+ related[relaProduct].name +`</b></h3> 
+      <h5 class="text-center" ><b>`+ related[relaProduct].currency + " " +  related[relaProduct].cost +`</b></h5> 
+      <small class="text-muted"> `+ related[relaProduct].soldCount + " vendidos" +`</small> 
+      </div> </a>`})
+  document.getElementById("relaProduct").innerHTML = htmlContentToAppend;
+ }
+
+//Función que se ejecuta una vez que se haya lanzado el evento de
+//que el documento se encuentra cargado, es decir, se encuentran todos los
+//elementos HTML presentes.
+
+document.addEventListener("DOMContentLoaded", function (e) {
+
+  // Obtengo los datos json de la info
+  getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
+    if (resultObj.status === "ok") {
+      productInfo = resultObj.data;
+
+      let productNameHTML = document.getElementById("productName");
+      let productDescriptionHTML =
+        document.getElementById("productDescription");
+      let productCostHTML = document.getElementById("productCost");
+      let productSoldCountHTML = document.getElementById("productSoldCount");
+      
+      productNameHTML.innerHTML = productInfo.name;
+      productDescriptionHTML.innerHTML = productInfo.description;
+      productCostHTML.innerHTML =  productInfo.currency + productInfo.cost ;
+      productSoldCountHTML.innerHTML = productInfo.soldCount;
+      
+      showProductsInfo(productInfo.images);
+    }
+  });
+
+  // Obtengo los datos json de los comentarios
+  getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
+    if (resultObj.status === "ok") {
+      commentsArray = resultObj.data;
+      showProductsComments(commentsArray);
+    }
+  });
+
+
+// Obtengo los productos relacionados
+getJSONData(PRODUCTS_URL).then(function (resultObj) {
+  if (resultObj.status === "ok") {
+     htmlContentToAppend = resultObj.data;
+     showRelatedProducts(htmlContentToAppend)
+ }
+  })
+
+  
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+})

@@ -13,17 +13,38 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
 </head>
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="principal.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-    </div>
+    <div
+      class="container d-flex flex-column flex-md-row justify-content-between text-center"
+    >
+      <a class="py-2 d-none d-md-inline-block" href="principal.html"
+        ><i class="fas fa-home"></i><b> Inicio</b></a
+      >
+      <a class="py-2 d-none d-md-inline-block" href="categories.html"
+        ><i class="fas fa-tags"></i> <b>Categorías</b></a
+      >
+      <a class="py-2 d-none d-md-inline-block" href="products.html"
+        ><i class="fas fa-list-ul"></i> <b> Productos</b></a
+      >
+      <a class="py-2 d-none d-md-inline-block" href="sell.html"> <i class="fas fa-shopping-basket"></i> <b> Vender</b></a>
+        
+      
+
+      <div class="dropdown">
+        <button class="dropbtn"><b><i class="far fa-user-circle"></i><p id="nombre"></p></b> </button>
+        <div class="dropdown-content">
+          <a href="my-profile.html"><i class="fas fa-user-circle"></i> <b>Mi perfil</b>  </a>
+          <a href="cart.html"><i class="fas fa-shopping-cart"></i> <b>Mi carrito</b></a>
+           <div class="dropdown-divider"></div>
+          <a href="#" id="desconectar" onclick="desconectar();" > <i class="fas fa-sign-out-alt"></i> <b> Cerrar sesión </b> </a>
+        </div>
+      </div>
+</div>
+    
   </nav>
   <main role="main">
     <div class="container mt-5">
@@ -81,6 +102,8 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/category-info.js"></script>
+  <script src="js/login.js"></script>
+
 </body>
 
 </html>

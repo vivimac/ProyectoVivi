@@ -33,24 +33,33 @@
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
-        <div class="container d-flex flex-column flex-md-row justify-content-between">
-            <a class="py-2 d-none d-md-inline-block" href="principal.html">Inicio</a>
-            <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-            <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-            <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-            <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-
-            <div
-          class="fondo d-flex flex-column flex-md-row justify-content-between"
+      <div
+        class="container d-flex flex-column flex-md-row justify-content-between text-center"
+      >
+        <a class="py-2 d-none d-md-inline-block" href="principal.html"
+          ><i class="fas fa-home"></i><b> Inicio</b></a
         >
-          <i class="far fa-user"></i>&nbsp&nbsp&nbsp
-            <b><p id="nombre"></p></b>
-        </div>
+        <a class="py-2 d-none d-md-inline-block" href="categories.html"
+          ><i class="fas fa-tags"></i> <b>Categorías</b></a
+        >
+        <a class="py-2 d-none d-md-inline-block" href="products.html"
+          ><i class="fas fa-list-ul"></i> <b> Productos</b></a
+        >
+        <a class="py-2 d-none d-md-inline-block" href="sell.html"> <i class="fas fa-shopping-basket"></i> <b> Vender</b></a>
+          
+        
 
-        <button class="desconect" id="desconectar" onclick="desconectar()">
-          <b>Desconectar</b> <i class="fas fa-sign-out-alt"></i>
-        </button>
+        <div class="dropdown">
+          <button class="dropbtn"><b><i class="far fa-user-circle"></i><p id="nombre"></p></b> </button>
+          <div class="dropdown-content">
+            <a href="my-profile.html"><i class="fas fa-user-circle"></i> <b>Mi perfil</b>  </a>
+            <a href="cart.html"><i class="fas fa-shopping-cart"></i> <b>Mi carrito</b></a>
+             <div class="dropdown-divider"></div>
+            <a href="#" id="desconectar" onclick="desconectar();" > <i class="fas fa-sign-out-alt"></i> <b> Cerrar sesión </b> </a>
+          </div>
         </div>
+</div>
+      
     </nav>
       <div class="container">
         <div class="text-center p-4">

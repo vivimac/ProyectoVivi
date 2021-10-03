@@ -17,30 +17,43 @@
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="principal.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+    <div
+      class="container d-flex flex-column flex-md-row justify-content-between text-center"
+    >
+      <a class="py-2 d-none d-md-inline-block" href="principal.html"
+        ><i class="fas fa-home"></i><b> Inicio</b></a
+      >
+      <a class="py-2 d-none d-md-inline-block" href="categories.html"
+        ><i class="fas fa-tags"></i> <b>Categorías</b></a
+      >
+      <a class="py-2 d-none d-md-inline-block" href="products.html"
+        ><i class="fas fa-list-ul"></i> <b> Productos</b></a
+      >
+      <a class="py-2 d-none d-md-inline-block" href="sell.html"> <i class="fas fa-shopping-basket"></i> <b> Vender</b></a>
+        
+      
 
-      <div
-          class="fondo d-flex flex-column flex-md-row justify-content-between"
-        >
-          <i class="far fa-user"></i>&nbsp&nbsp&nbsp
-            <b><p id="nombre"></p></b>
+      <div class="dropdown">
+        <button class="dropbtn"><b><i class="far fa-user-circle"></i><p id="nombre"></p></b> </button>
+        <div class="dropdown-content">
+          <a href="my-profile.html"><i class="fas fa-user-circle"></i> <b>Mi perfil</b>  </a>
+          <a href="cart.html"><i class="fas fa-shopping-cart"></i> <b>Mi carrito</b></a>
+           <div class="dropdown-divider"></div>
+          <a href="#" id="desconectar" onclick="desconectar();" > <i class="fas fa-sign-out-alt"></i> <b> Cerrar sesión </b> </a>
         </div>
-
-        <button class="desconect" id="desconectar" onclick="desconectar()">
-          <b>Desconectar</b> <i class="fas fa-sign-out-alt"></i>
-        </button>
-    </div>
+      </div>
+</div>
+    
   </nav>
-
   
   <div class="container p-5">
-    
-    <b><h2 id="productName"></b></h2>
+    <div class="text-center p-4">
+      <h2>Encontrarás aquí toda la información del producto seleccionado.</h2>
+    <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
+      seleccionado previamente, siempre se visualizará el presente: <strong>Chevrolet Onix</strong>.</p>
+    </div>
+
+      <h1 id="productName"></h1>
     <hr class="my-3">
   
     <dl>
@@ -64,13 +77,15 @@
          <dd> <div class="row text-center text-lg-left pt-2" id="productImages">
 </div>
       </dd>
-
-    
-    <!--<dt> Productos relacionados</dt>
-  <dd>        <p id="productRela"></p>-->
-  </dd>
-
 </dl>
+<br>
+
+<div> 
+<h5><b>A los usuarios que vieron este artículo, también les interesó:</h5> </b>
+    <br>
+  <div class="row text-center" id="relaProduct"></div>
+</div>
+  
 <br><br>
 <br><br>
 
