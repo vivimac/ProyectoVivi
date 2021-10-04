@@ -1,7 +1,7 @@
 let htmlContentToAppend = []
 
 // Muestra la info
-function showProductsInfo(array) {
+/*function showProductsInfo(array) {
   let htmlContentToAppend = "";
 
   for (let i = 0; i < array.length; i++) {
@@ -16,9 +16,24 @@ function showProductsInfo(array) {
             </div>
         </div>
         `;
-    document.getElementById("productImages").innerHTML = htmlContentToAppend;
+    document.getElementById("carou").innerHTML = htmlContentToAppend;
   }
-}
+}*/
+
+// Muestra las imagenes
+function showImgCarousel(array) {
+  let carouselImg = "";
+carouselImg += ` <div class="carousel-item active">
+                <img src=" `+ productInfo.images[0] + ` " class="d-block w-100" alt="...">
+              </div>`
+  for (let i = 1; i < array.length; i++) {
+    let images = array[i];
+    carouselImg += ` <div class="carousel-item">
+    <img src=" ` + productInfo.images[i] + ` " class="d-block w-100" alt="...">
+  </div>` }
+  document.getElementById("carou").innerHTML = carouselImg;
+     }  
+              
 
 // Muestra los comentarios
 function showProductsComments(comment) {
@@ -139,7 +154,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
       productCostHTML.innerHTML =  productInfo.currency + productInfo.cost ;
       productSoldCountHTML.innerHTML = productInfo.soldCount;
       
-      showProductsInfo(productInfo.images);
+      //showProductsInfo(productInfo.images);
+      showImgCarousel(productInfo.images)
     }
   });
 
@@ -148,6 +164,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     if (resultObj.status === "ok") {
       commentsArray = resultObj.data;
       showProductsComments(commentsArray);
+
     }
   });
 

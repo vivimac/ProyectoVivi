@@ -21,18 +21,12 @@
       class="container d-flex flex-column flex-md-row justify-content-between text-center"
     >
       <a class="py-2 d-none d-md-inline-block" href="principal.html"
-        ><i class="fas fa-home"></i><b> Inicio</b></a
-      >
-      <a class="py-2 d-none d-md-inline-block" href="categories.html"
-        ><i class="fas fa-tags"></i> <b>Categorías</b></a
-      >
-      <a class="py-2 d-none d-md-inline-block" href="products.html"
-        ><i class="fas fa-list-ul"></i> <b> Productos</b></a
-      >
+        ><i class="fas fa-home"></i><b> Inicio</b></a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html"><i class="fas fa-tags"></i> <b>Categorías</b></a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html"><i class="fas fa-list-ul"></i> <b> Productos</b></a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html"> <i class="fas fa-shopping-basket"></i> <b> Vender</b></a>
         
-      
-
+  
       <div class="dropdown">
         <button class="dropbtn"><b><i class="far fa-user-circle"></i><p id="nombre"></p></b> </button>
         <div class="dropdown-content">
@@ -72,13 +66,16 @@
       <dd>
         <p id="productSoldCount"></p>
       </dd>
-  
-      <dt><i class="fas fa-camera"></i> Imágenes ilustrativas</dt><br>
-         <dd> <div class="row text-center text-lg-left pt-2" id="productImages">
-</div>
-      </dd>
+      
 </dl>
-<br>
+      <dt><i class="fas fa-camera"></i> Imágenes ilustrativas</dt><br>
+         <dd> 
+           <div class="carousel slide" data-ride="carousel" data-interval="2000">
+            <div class="carousel-inner" id="carou">
+            </div>
+         </div></dd>
+          
+<br><br><br>
 
 <div> 
 <h5><b>A los usuarios que vieron este artículo, también les interesó:</h5> </b>
@@ -113,15 +110,13 @@
 
   </div> 
   
-  </div>
+  </div></div>
 
 <br><br>
 
   <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Volver a la lista de productos</a>
 </div>
 </main>
-
-
 
 
   <footer class="text-muted">
