@@ -33,6 +33,7 @@
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/dropzone.css" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
+  
 
 </head>
 
@@ -52,8 +53,6 @@
       >
       <a class="py-2 d-none d-md-inline-block" href="sell.html"> <i class="fas fa-shopping-basket"></i> <b> Vender</b></a>
         
-      
-
       <div class="dropdown">
         <button class="dropbtn"><b><i class="far fa-user-circle"></i><p id="nombre"></p></b> </button>
         <div class="dropdown-content">
@@ -64,16 +63,77 @@
         </div>
       </div>
 </div>
-    
   </nav>
+
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div class="text-center p-4">
+      
+<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_47pyyfcf.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px; padding-left: 100mm; "  loop  autoplay></lottie-player>
+<h1><b>Mi carrito</b></h1>    
+<br><p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, solo veras los siguientes articulos en tu lista de compras </p>
     </div>
+  
+
+    <div id="listaCarrito">
+    </div>
+
+    <button class="btn btn-info float-right" ><a href="products.html" style="color: white;"><b>Continuar comprando</b></a></button>
+    
+<br><br>
+    <hr class="mb-4">
+      <div id="pago">
+  <h3 class="mb-3"><b>Total de compra</b></h3>
+
+              <ul class="list-group mb-3">
+                  <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                      <h5 class="my-0"><b>Sub Total</b></h5>
+                    </div>
+                    <span style="font-size: 8mm; " id="subtotalFinal">-</span>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div>
+                      <h5 class="my-0"><b>Tipo de envio</b></h5>
+                      <div class="d-block my-3">
+                        <div id="costEnvio" class="custom-control custom-radio">
+                          <input id="premradio" name="porcentajeEnvio" type="radio" class="custom-control-input" onclick="totales()" checked="" required="">
+                          <label class="custom-control-label" for="premradio"><b>Premium</b> (2 a 5 dias)= <b> +15%</b></label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input id="expressradio" name="porcentajeEnvio" type="radio" class="custom-control-input" onclick="totales()" required="">
+                          <label class="custom-control-label" for="expressradio"><b>Express</b> (5 a 8 dias)= <b> +7%</b></label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input id="standradio" name="porcentajeEnvio" type="radio" class="custom-control-input" onclick="totales()" required="">
+                          <label class="custom-control-label" for="standradio"><b>Standar</b> (12 a 15 dias)= <b> +5%</b></label>
+                     </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between">
+                    <span style="font-size: 7mm;"><b>Total a pagar (USD)</b></span>
+                    <strong style="font-size: 8mm;" id="totalCost">-</strong>
+                  </li>
+                </ul>
+              <hr class="mb-4">
+      <button class="btn btn-primary btn-lg float-right" onclick="comprar()"><b>Finalizar compra</b></button>
+    </div>
+
   </div>
+</div>
+<br>
+<br>
+<br>
+
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Volver arriba</a>
+      </p>
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2021</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -88,6 +148,8 @@
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/login.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
