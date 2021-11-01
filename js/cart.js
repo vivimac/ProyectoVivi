@@ -8,26 +8,26 @@ let article = lista.articles[i];
 if(article.currency == "UYU"){
        article.currency = "USD";
        article.unitCost=article.unitCost/40;                  
-}
+} 
 
 tabla += `
-<div class="table" >
-<table class="table table-bordered">
+<div class="table mb-3" >
+<table class="table table-bordered mb-3">
   
-<thead class="table-dark ">
+<thead class="table-dark">
   <tr>
-  <th class="text-center" style="width:100mm"><h4><b>` +   article.name + `</h4></b></th>
-  <th class="text-center" style="width:40mm">Cantidad</th>
-  <th class="text-center" style="width:80mm">Costo unitario</th>
-  <th class="text-center" style="width:90mm"> Sub Total</th>
+  <th class="mb-3" style="width:200px"><h4><b>` +   article.name + `</h4></b></th>
+  <th class="mb-3" style="width:100px ">Cantidad</th>
+  <th class="mb-3" style="width:100px">Costo unitario</th>
+  <th class="mb-3" style="width:100px"> Sub Total</th>
 </tr>
-</thead>
+</thead> 
 
 <tbody >
-<td><img src="` + article.src + `" style="width:40mm"></td>
-<td><input id='cant${i}' onchange='totales()' type="number" min=1 max=50 value=1 style="font-size:6mm"></td>
-<td class="text-center" id="precio" style="font-size:8mm"> ` + article.currency + ` <span class="price">  ` + article.unitCost +  `</span></td>
-<td id='sub${i}' class="text-center" style="font-size:8mm"></td>
+<td class="mb-3" ><img src="` + article.src + `" style="width:150px"></td>
+<td class="mb-3" ><input id='cant${i}' onchange='totales()' type="number" min=1 max=50 value=1 style="font-size:6mm"></td>
+<td class=" mb-3" id="precio" style="font-size:25px"> ` + article.currency + ` <span class="price">  ` + article.unitCost +  `</span></td>
+<td id='sub${i}' class="mb-3" style="font-size:35px "></td>
 </tbody>
 
 </table>

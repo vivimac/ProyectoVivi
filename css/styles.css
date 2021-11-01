@@ -173,8 +173,9 @@ padding-top: 10px;
 }
 
 .textarea {
-  width: 13cm;
+  width: 7.5cm;
   height: 4cm;
+  grid-auto-rows: min-content;
 }
  
 
