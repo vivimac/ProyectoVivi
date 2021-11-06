@@ -12,7 +12,8 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet" />
-
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -66,15 +67,15 @@
   </nav>
 
   <div class="container p-5 mb-3">
-    <div class="text-center p-4">
+    <div class="text-center mb-3">
       
-<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_47pyyfcf.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px; padding-left: 100mm; "  loop  autoplay></lottie-player>
+<lottie-player src="https://assets1.lottiefiles.com/packages/lf20_47pyyfcf.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px;  "  loop  autoplay></lottie-player>
 <h1><b>Mi carrito</b></h1>    
 <br><p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, solo veras los siguientes articulos en tu lista de compras </p>
     </div>
   
 
-    <div id="listaCarrito" class=" mb-3 ">
+    <div id="listaCarrito" class=" row-md">
     </div>
 
     <button class="btn btn-info float-right" ><a href="products.html" style="color: white;"><b>Continuar comprando</b></a></button>
@@ -91,24 +92,29 @@
                     </div>
                     <span style="font-size: 8mm; " id="subtotalFinal">-</span>
                   </li>
+
                   <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
                       <h5 class="my-0"><b>Tipo de envio</b></h5>
+                  
                       <div class="d-block my-3">
-                        <div id="costEnvio" class="custom-control custom-radio">
-                          <input id="premradio" name="porcentajeEnvio" type="radio" class="custom-control-input" onclick="totales()" checked="" required="">
-                          <label class="custom-control-label" for="premradio"><b>Premium</b> (2 a 5 dias)= <b> +15%</b></label>
+                        <div class="custom-control custom-radio ">
+                          <input id="premium" name="envio" type="radio" class="custom-control-input" onclick="totales()" checked="" required="">
+                          <label class="custom-control-label" for="premium"><b>Premium</b> (2 a 5 dias)= <b> +15%</b></label>
                         </div>
                         <div class="custom-control custom-radio">
-                          <input id="expressradio" name="porcentajeEnvio" type="radio" class="custom-control-input" onclick="totales()" required="">
-                          <label class="custom-control-label" for="expressradio"><b>Express</b> (5 a 8 dias)= <b> +7%</b></label>
+                          <input id="express" name="envio" type="radio" class="custom-control-input" onclick="totales()" required="">
+                          <label class="custom-control-label" for="express"><b>Express</b> (5 a 8 dias)= <b> +7%</b></label>
                         </div>
                         <div class="custom-control custom-radio">
-                          <input id="standradio" name="porcentajeEnvio" type="radio" class="custom-control-input" onclick="totales()" required="">
-                          <label class="custom-control-label" for="standradio"><b>Standar</b> (12 a 15 dias)= <b> +5%</b></label>
-                     </div>
+                          <input id="standar" name="envio" type="radio" class="custom-control-input" onclick="totales()" required="">
+                          <label class="custom-control-label" for="standar"><b>Standar</b> (12 a 15 dias)= <b> +5%</b></label>
+                        </div>
                       </div>
+
                     </div>
+                    <span style="font-size: 6mm; " id="tipodeenvio" class="float-right">-</span>
+
                   </li>
                   <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
@@ -116,12 +122,50 @@
                     </div>
                     <span style="font-size: 8mm; " id="totalCost">-</span>
                   </li>
-                </ul>
-              <hr class="mb-4">
+</div>
+
+<!-- Button trigger modal -->
+<div class="text-center pago">
+<button type="button" class="btn btn-lg btn-info pago" data-toggle="modal" data-target="#exampleModal">
+  <b>Elegir forma de pago</b></button>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="exampleModalLabel"><b>Debe seleccionar una forma de pago</b></h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body ">
+          <h4><i class="far fa-credit-card"></i> <b>Tarjetas de crédito:</b></h4>
+          <h5>VISA - MASTERCARD - BROU - OCA - ANDA</h5>
+
+          <p>Internacional hasta 6 cuotas sin recargo</p>
+          <p>Nacional hasta 6 cuotas sin recargo</p>
+
+          <h4><i class="fas fa-coins"></i> <b>Transferencia bancaria: </b>
+          </h4> 
+          <h5>BBVA - ITAU - SANTANDER</h5>
+          <p>Efectivo y cheques</p>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary"><b>Transferencia bancaria</b></button>
+          <button type="button" class="btn btn-info"><b>Tarjeta de credito</button></b></button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Continuar</b></button>
+        </div>
+      </div>
+    </div>
+         </div>     
+</ul>
+<hr class="mb-4">
       <button class="btn btn-primary btn-lg float-right" onclick="comprar()"><b>Finalizar compra</b></button>
     </div>
 
-  </div>
+  
 </div>
 <br>
 <br>
@@ -144,14 +188,17 @@
       <div></div>
     </div>
   </div>
+  <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
   <script src="js/login.js"></script>
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="//unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+ 
 </body>
 
 </html>
