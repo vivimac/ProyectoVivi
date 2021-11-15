@@ -96,21 +96,40 @@ function eliminar(i) {
     }
     }
 
+function activarBanco() {
+    document.getElementById("cont").disabled = false
+    document.getElementById("cuenta").disabled = false
+    document.getElementById("cod").disabled = true
+    document.getElementById("cuota").disabled = true
+    document.getElementById("tarj").disabled = true
+    document.getElementById("num").disabled = true
+    document.getElementById("venc").disabled = true
+    document.getElementById("banco").disabled = false
+    document.getElementById("forma").innerText= 'Elegiste pagar mediante TRANSFERENCIA BANCARIA'
+}
+
+function activarCredito() {
+    document.getElementById("cont").disabled = false
+    document.getElementById("cod").disabled = false
+    document.getElementById("cuota").disabled = false
+    document.getElementById("tarj").disabled = false
+    document.getElementById("venc").disabled = false
+    document.getElementById("num").disabled = false
+    document.getElementById("banco").disabled = true
+    document.getElementById("cuenta").disabled = true
+    document.getElementById("forma").innerText= "Elegiste pagar mediante TARJETA DE CREDITO  "
+}
+
+
+
+function finalizar() { 
+    alert("Verifica haber completado todos los campos correctamente");
+   
+    document.getElementById("listo").disabled = false;
+}
+
 
 function comprar(){
-   /* let formadepago = document.getElementsByClassName('pago'); 
-    let tipoenvio = document.getElementsByTagName('envio');
-       
-        let msj = document.getElementById("msj");
-    
-        if (tipoenvio.value.trim() === "" || formadepago.value.trim() === "") {
-          tipoenvio.classList.add("isInvalid") || formadepago.classList.add("isInvalid") ;
-          msj.innerHTML = "Dato requerido";
-          msj.style.color = "red";
-          msj.style.display = "block";
-      
-        } else {*/
-
     Swal.fire({
       position: 'middle',
       html: '<lottie-player src="https://assets2.lottiefiles.com/packages/lf20_4eth4jy9.json"  background="transparent"  speed="1"  style="width: 450px; height: 450px;"    autoplay></lottie-player>',
@@ -118,7 +137,6 @@ function comprar(){
       showConfirmButton: false,
       timer: 2500
     }) }  
-//}
 
 
 document.addEventListener("DOMContentLoaded", function(e){
@@ -129,8 +147,6 @@ document.addEventListener("DOMContentLoaded", function(e){
             showCart(carrito);
         }
     })
-
-
 
 
 
