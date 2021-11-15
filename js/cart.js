@@ -104,7 +104,9 @@ function activarBanco() {
     document.getElementById("tarj").disabled = true
     document.getElementById("num").disabled = true
     document.getElementById("venc").disabled = true
+    document.getElementById("titular").disabled = true
     document.getElementById("banco").disabled = false
+    document.getElementById("depo").disabled = false
     document.getElementById("forma").innerText= 'Elegiste pagar mediante TRANSFERENCIA BANCARIA'
 }
 
@@ -115,8 +117,10 @@ function activarCredito() {
     document.getElementById("tarj").disabled = false
     document.getElementById("venc").disabled = false
     document.getElementById("num").disabled = false
+    document.getElementById("titular").disabled = false
     document.getElementById("banco").disabled = true
     document.getElementById("cuenta").disabled = true
+    document.getElementById("depo").disabled = true
     document.getElementById("forma").innerText= "Elegiste pagar mediante TARJETA DE CREDITO  "
 }
 

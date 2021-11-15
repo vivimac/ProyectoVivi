@@ -77,7 +77,7 @@
     <div class="text-center mb-3">
       
 <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_47pyyfcf.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px;  "  loop  autoplay></lottie-player>
-<h1><b>Mi carrito</b></h1>    
+<h1><b>Mi carrito <i class="fas fa-shopping-cart"></i></b></h1>    
 <br><p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, solo veras los siguientes articulos en tu lista de compras </p>
     </div>
   
@@ -138,12 +138,13 @@
   <span style="font-size: 4mm; font-weight: bolder; " id="forma" class="float-right"></span>
 
   </div>
+  
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" data-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h3 class="modal-title" id="exampleModalLabel"><b>Debe seleccionar una forma de pago</b></h3>
+          <h3 class="modal-title" id="exampleModalLabel"><b>Debe seleccionar una forma de pago <i class="fas fa-piggy-bank"></i></b></h3>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -167,12 +168,14 @@
             <option value="5">VISA</option>
           </select><br>
 
+          <label for="cuota">Nombre y apellido del titular:</label>
+          <input class="form-control is-invalid"  type="text" id="titular" required disabled/>
           <label for="num">Número:</label>
           <input class="form-control is-invalid"  type="text" id="num" maxlength="16" minlength="16" required disabled/>
           <label for="cod">Cód. de seguridad:</label>
           <input class="form-control is-invalid" type="text" id="cod" maxlength="3" minlength="3" required disabled/>
           <label for="venc">Fecha de vencimiento:</label>
-          <input class="form-control is-invalid"  type="month" id="venc" required disabled/><br>
+          <input class="form-control is-invalid"  type="month" id="venc" required disabled/>
           <label for="cuota">Cantidad de cuotas:</label>
           <input class="form-control is-invalid" type="number" id="cuota"  value="1" min="1" max="18" disabled required /><br><br>
 
@@ -193,7 +196,8 @@
 
               <label for="cuenta">Número de cuenta:</label>
           <input type="text" id="cuenta" class="form-control is-invalid" maxlength="12" required disabled/>
-
+          <label for="cuota">Nombre y apellido del depositante:</label>
+          <input class="form-control is-invalid"  type="text" id="depo" required disabled/>
         </div>
 
         <div class="modal-footer">
